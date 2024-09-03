@@ -183,7 +183,7 @@ class H1():
         resample_i = torch.zeros(self.num_envs, device=self.device, dtype=torch.bool)
         if self.common_step_counter % self.target_jt_update_steps_int == 0:
             self.target_jt_j += 1
-            jt_eps_end_bool = self.target_jt_j >= self.target_jt_seq_len
+            jt_eps_end_bool = self.target_jt_j >= self.target_jt_seq_len[self.target_jt_i]
             self.target_jt_j = torch.where(jt_eps_end_bool, torch.zeros_like(self.target_jt_j), self.target_jt_j)
             resample_i[jt_eps_end_bool.nonzero(as_tuple=False).flatten()] = True
             self.target_jt_update_steps_int = sample_int_from_float(self.target_jt_update_steps)
