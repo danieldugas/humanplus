@@ -12,7 +12,7 @@ def load_single_target_jt(device, file, offset):
 
 def load_target_jt(device, file, offset):
     import glob
-    paths = glob.glob("/home/daniel/Insync/daniel@dugas.ch/Google Drive/AI/HumaNoid/ACCAD_H1_PARTIAL/*.npy")
+    paths = glob.glob("/home/daniel/Insync/daniel@dugas.ch/Google Drive/AI/HumaNoid/AMASS_H1/*.npy")
     sequences = []
     sequence_lengths = []
     _19 = 19 # number of dofs
